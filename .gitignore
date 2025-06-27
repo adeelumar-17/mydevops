@@ -1,0 +1,50 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+.env
+.env.*
+
+# Docker
+*.pid
+*.log
+docker-compose.override.yml
+docker.env
+.docker/
+
+# VSCode or JetBrains IDEs
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Ansible
+*.retry
+ansible/*.retry
+
+# Terraform
+terraform.tfstate
+terraform.tfstate.*
+.terraform/
+*.tfvars
+crash.log
+override.tf
+override.tf.json
+*.backup
+
+# SSH keys (DO NOT TRACK THESE)
+*.pem
+*.pub
+*.key
+*.crt
+*.csr
+id_rsa
+id_rsa.pub
+
+# GitHub Actions cache
+.github/workflows/*.log
+.github/workflows/*.tmp

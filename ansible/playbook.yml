@@ -1,0 +1,22 @@
+- name: Deploy Docker App
+  hosts: remote
+  become: true
+  tasks:
+    - name: Install Docker
+      apt:
+        name: docker.io
+        update_cache: yes
+        state: present
+
+    - name: Pull latest code
+      git:
+        repo: https://github.com/yourusername/my-devops-project.git
+        dest: /home/youruser/app
+        force: yes
+
+    - name: Run Docker container
+      shell: |
+        docker stop myapp || true
+        docker rm myapp || true
+        docker build -t myapp /home/youruser/app/app
+        docker run -d -p 3000:3000 --name myapp myapp
