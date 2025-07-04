@@ -3,6 +3,8 @@ name: CI/CD Pipeline
 on:
   push:
     branches: [main]
+    paths:
+      - 'app/**'           # Only run when something in /app changes
 
 jobs:
   build-and-deploy:
